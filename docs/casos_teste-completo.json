@@ -1,0 +1,52 @@
+[
+  {
+    "Nome": "P - Autenticação - Login com Sucesso (Usuário e Senha Válidos)",
+    "Objetivo": "Garantir que um usuário com credenciais válidas consiga se autenticar e acessar o sistema",
+    "Precondição": "Existir um usuário ativo cadastrado no sistema com login e senha válidos",
+    "Status": "Approved",
+    "Priority": "Alta",
+    "Script de Teste (BDD)": "Given que o usuário esteja na tela de login do sistema;When informar um usuário válido no campo de usuário;And informar uma senha válida correspondente no campo de senha;And clicar no botão \"Entrar\";Then o sistema autentica o usuário com sucesso;And redireciona para a tela inicial (dashboard) do sistema",
+    "Automatizado": "A ser automatizado",
+    "Validação em Banco de Dados": "Validar se a data/hora do último acesso do usuário foi atualizada na tabela de usuários"
+  },
+  {
+    "Nome": "P - Autenticação - Login com Lembrar-me",
+    "Objetivo": "Garantir que a opção \"Lembrar-me\" mantenha o usuário logado ou preencha automaticamente os campos",
+    "Precondição": "Existir um usuário ativo cadastrado no sistema",
+    "Status": "Approved",
+    "Priority": "Média",
+    "Script de Teste (BDD)": "Given que o usuário esteja na tela de login;When informar usuário e senha válidos;And marcar a opção \"Lembrar-me\";And clicar em \"Entrar\";Then o sistema autentica o usuário;And ao fechar e reabrir o navegador, o usuário permanece logado ou os campos são preenchidos automaticamente",
+    "Automatizado": "A ser automatizado",
+    "Validação em Banco de Dados": "Não se aplica"
+  },
+  {
+    "Nome": "P - Autenticação - Login com Perfil de Administrador",
+    "Objetivo": "Garantir que um usuário com perfil de administrador visualize os menus corretos após o login",
+    "Precondição": "Existir um usuário ativo com perfil de administrador cadastrado",
+    "Status": "Approved",
+    "Priority": "Alta",
+    "Script de Teste (BDD)": "Given que um usuário com perfil de administrador esteja na tela de login;When informar suas credenciais válidas;And clicar em \"Entrar\";Then o sistema autentica o usuário;And redireciona para o dashboard;And exibe os menus e funcionalidades exclusivas de administrador",
+    "Automatizado": "A ser automatizado",
+    "Validação em Banco de Dados": "Não se aplica"
+  },
+  {
+    "Nome": "P - Autenticação - Login com Perfil de Usuário Comum",
+    "Objetivo": "Garantir que um usuário com perfil comum visualize apenas os menus permitidos após o login",
+    "Precondição": "Existir um usuário ativo com perfil comum cadastrado",
+    "Status": "Approved",
+    "Priority": "Alta",
+    "Script de Teste (BDD)": "Given que um usuário com perfil comum esteja na tela de login;When informar suas credenciais válidas;And clicar em \"Entrar\";Then o sistema autentica o usuário;And redireciona para o dashboard;And exibe apenas os menus e funcionalidades permitidas para seu perfil",
+    "Automatizado": "A ser automatizado",
+    "Validação em Banco de Dados": "Não se aplica"
+  },
+  {
+    "Nome": "P - Autenticação - Redefinição de Senha com Sucesso",
+    "Objetivo": "Garantir que o usuário consiga redefinir a senha através do fluxo de \"Esqueci minha senha\"",
+    "Precondição": "Existir um usuário ativo cadastrado com e-mail válido",
+    "Status": "Approved",
+    "Priority": "Alta",
+    "Script de Teste (BDD)": "Given que o usuário esteja na tela de login;When clicar em \"Esqueci minha senha\";And informar o e-mail cadastrado;And clicar em \"Enviar\";Then o sistema exibe mensagem de confirmação de envio;And o usuário recebe um e-mail com link para redefinição;And ao clicar no link, o sistema permite cadastrar uma nova senha",
+    "Automatizado": "A ser automatizado",
+    "Validação em Banco de Dados": "Validar se o token de redefinição foi gerado e armazenado corretamente no banco"
+  }
+]
